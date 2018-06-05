@@ -6,7 +6,7 @@ from the parent process to environment of the shell (/bin/sh)
 and set some mandatory variables before execve(2)ing the shell.
 </p>
 <p>
-An arguments passed to cleansh are passed onto the new shell.
+Any arguments passed to cleansh are passed onto the new shell.
 </p>
 <h2>Examples</h2>
 <pre>
@@ -38,5 +38,20 @@ An arguments passed to cleansh are passed onto the new shell.
 	#
 	/usr/bin/printenv
 </pre>
-
-
+<h2>Notes</h2>
+<p>
+Environment variables passed "as is" to child process:
+	USER, LOGNAME, HOME, TERM, LANG, DISPLAY
+</p>
+<p>
+SHELL is set to "/bin/sh"
+</p>
+<p>
+PATH is set to "/sbin:/bin:/usr/sbin:/usr/bin"
+</p>
+<p>
+LC_COLLATE is set to "C"
+</p>
+<p>
+PS1 is set to "cleansh ! $ "
+</p>
