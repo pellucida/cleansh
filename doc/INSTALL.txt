@@ -1,0 +1,12 @@
+Installation
+
+The whole program is one C file - src/cleansh.c
+
+cd src/
+
+make
+
+Which essentially just does
+
+	Or cc -g -o cleansh cleansh.c
+
