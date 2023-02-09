@@ -71,11 +71,11 @@ int	strvec_grow (STRVEC* sv) {
 		size_t	newsize	= strvec_size(sv) * 2;
 		char**	new	= 0;
 		if (newsize>0) {
-			new	= realloc (strvec_carray(sv), newsize);
+			new	= realloc (strvec_carray(sv), newsize*sizeof(*new));
 		}
 		else {
 			newsize	= DEFAULT_STRVEC_SIZE;
-			new	= calloc (newsize,1);
+			new	= calloc (newsize,sizeof(*new));
 		}
 			
 		if (new) {
